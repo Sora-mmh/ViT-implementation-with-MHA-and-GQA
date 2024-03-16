@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
-import math
-import einops
+
 
 from ..attention import MHAttentionBlock, GCAttentionBlock
 from ..patches_embedder import PatchesEmbedder

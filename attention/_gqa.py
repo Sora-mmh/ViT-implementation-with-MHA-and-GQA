@@ -1,3 +1,5 @@
+import logging
+
 import torch
 import torch.nn as nn
 import math
@@ -51,16 +53,16 @@ class GroupedQueryAttention(nn.Module):
         attention_outputs: bool = True,
     ) -> None:
         super().__init__()
-        assert (
-            embed_dim % num_query_heads == 0
-        ), f"Please the embedding dimension must be divisible by the number of attention heads"
+        assert embed_dim % num_query_heads == 0, logging.info(
+            "The embedding dimension must be divisible by the number of query heads"
+        )
         self.embed_dim = embed_dim
         self.num_query_heads = num_query_heads
         self.query_head_dim = self.embed_dim // self.num_query_heads
         self.attention_outputs = attention_outputs
-        assert (
-            self.num_query_heads % num_queries_per_group == 0
-        ), f"Please the number of query heads must be divisible by the number of grouped queries"
+        assert self.num_query_heads % num_queries_per_group == 0, logging.info(
+            "The number of query heads must be divisible by the number of grouped queries"
+        )
         self.num_kv_heads = self.num_query_heads // num_queries_per_group
         self.branchs = nn.ModuleList([])
         for _ in range(self.num_kv_heads):
