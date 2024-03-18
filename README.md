@@ -1,4 +1,4 @@
-# ViT-implementation-with-MHA-and-GCA
+# ViT-implementation-with-MHA-and-GQA
 
 
 <!-- TABLE OF CONTENTS -->
