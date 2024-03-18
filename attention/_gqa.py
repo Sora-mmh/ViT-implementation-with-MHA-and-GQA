@@ -6,7 +6,7 @@ import math
 import einops
 
 
-class GCAttentionBlock(nn.Module):
+class GQAttentionBlock(nn.Module):
     def __init__(
         self,
         embed_dim: int = 768,

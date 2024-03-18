@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 
-from ..attention import MHAttentionBlock, GCAttentionBlock
+from ..attention import MHAttentionBlock, GQAttentionBlock
 from ..patches_embedder import PatchesEmbedder
 
 
@@ -32,7 +32,7 @@ class ViT(nn.Module):
         self.attention_layers = nn.ModuleList([])
         for _ in range(num_layers):
             self.attention_layers.append(
-                GCAttentionBlock(
+                GQAttentionBlock(
                     embed_dim,
                     hidden_dim,
                     num_query_heads,
