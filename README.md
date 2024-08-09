@@ -1,26 +1,5 @@
 # ViT-implementation-with-MHA-and-GQA
 
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#About">About</a>
-    </li>
-    <li>
-      <a href="#Module">Module</a>
-    </li>
-    <li>
-    <a href="#MultiHeadAttention">Multihead Attention</a>
-    </li>
-    <li>
-    <a href="#GroupedQueryAttention">Grouped-Query Attention</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT -->
 ## About
 The [article](https://arxiv.org/pdf/2305.13245.pdf) of **GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints** ,endorsed by different LLMs since its release such as **Mistral Large**, presents a new approach of allocating query heads with key and value heads when computing the scaled dot product.
